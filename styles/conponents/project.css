@@ -16,17 +16,41 @@ main {
 .multi_page {
     width: 100%;
     height: auto;
-    background-color: var( --clr-grey);
+    background-color: var(--clr-grey);
     overflow-y: scroll;
     scroll-snap-type: y proximity;
     padding-top: var(--size-3xl);
     padding-bottom: var(--size-4xl);
- 
+
     /* transform: translateY(-100vh); */
     /* margin-top: -100vh; */
 }
 
+/* M */
+@media (max-width: 800px) {
+    .single_page {
+        scroll-snap-type: none;
+    }
+
+    .multi_page {
+        scroll-snap-type: none;
+    }
+}
+
 .slide {
+    overflow-y: hidden;
+    padding-top: 2rem;
+    /* padding-bottom: 2rem; */
+    /* border: solid 1px var(--clr-red); */
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    scroll-snap-align: start;
+    z-index: 0;
+}
+
+.slide_first {
     overflow-y: hidden;
     padding-top: 2rem;
     /* border: solid 1px var(--clr-red); */
@@ -36,6 +60,17 @@ main {
     display: flex;
     scroll-snap-align: start;
     z-index: 0;
+}
+
+/* M */
+@media (max-width: 800px) {
+    .slide {
+        overflow-y: scroll;
+        height: auto;
+        display: flex;
+        scroll-snap-align: start;
+        z-index: 0;
+    }
 }
 
 .slides {
@@ -49,7 +84,7 @@ main {
     z-index: 1;
     display: flex;
     flex-direction: column;
-    gap:var(--size-3xl);
+    gap: var(--size-3xl);
 }
 
 .bg_image {
@@ -84,8 +119,8 @@ main {
     justify-items: flex-end;
 }
 
-/* S */
-@media (max-width: 480px) {
+/* M */
+@media (max-width: 800px) {
     .title__container {
         align-content: space-between;
     }
@@ -112,112 +147,167 @@ main {
     padding-bottom: var(--size-xl);
     /* border: solid 2px rgb(0, 208, 255); */
     width: 100%;
+    /* display: flex; */
+    /* flex-direction: column; */
 }
+
 
 .basic__grid {
     padding-top: var(--size-s);
     display: grid;
-    grid-gap: 1rem var(--size-l);
+    grid-gap: var(--size-m) var(--size-l);
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto);
     align-content: start;
     justify-content: start;
 }
-/* M */
-@media (max-width: 800px){
-    .basic__grid {
-        padding-top: var(--size-xl);
-    }
-}
 
-/* S */
-
-/* @media (max-width: 480px){} */
-
-.basic__images {
+.basic__images_grid {
     /* border: 1px solid red; */
     grid-column: 1/-1;
-    grid-row: 1/4;
+    grid-row: span 2;
     display: grid;
     grid-template-columns: subgrid;
     grid-template-rows: subgrid;
     height: 100%;
 }
 
-.basic__images img {
+.basic__images_grid img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.basic__texts {
+.basic__images_L {
+    grid-column: span 2;
+    grid-row: span 2;
+    /* object-fit: cover;
+    height: 100%;
+    display: block; not working*/
+}
+
+.basic__images_S {
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.basic__texts_grid {
     grid-column: 1/-1;
-    grid-row: 3/4;
+    grid-row: span 1;
     /* background-color: aqua; */
     display: grid;
     grid-template-columns: subgrid;
     grid-template-rows: subgrid;
 }
 
-
-.basic__images_1 {
-    grid-column: 1/3;
-    grid-row: 1/3;
-    /* object-fit: cover;
-    height: 100%;
-    display: block; not working*/
-}
-
-.basic__images_2,
-.basic__images_3 {
-    grid-row: span 1;
+.text_content {
     grid-column: span 1;
 }
 
+/* M */
+@media (max-width: 800px) {
+    .basic__grid {
+        padding-top: var(--size-xl);
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .basic__images_grid {
+        grid-row: span 3;
+    }
+
+    .basic__texts_grid {
+        grid-row: span 3;
+    }
+
+    .text_content {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    /* 
+    .basic__images_L {
+        grid-column: span 1;
+        grid-row: span 1;
+    } */
+}
+
+
 /* -------------- 3.show -------------- */
-.show__grid {
-    padding-top: var(--size-s);
+.col__grid {
+    padding-top: var(--size-m);
+    width: 100%;
     display: grid;
-    grid-gap: 1rem var(--size-l);
+    grid-gap: var(--size-s) var(--size-l);
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, auto);
     align-content: start;
     justify-content: start;
 }
+
 /* L */
 @media (max-width: 1024px) {
-    .show__grid {
+    .col__grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 /* M */
-@media (max-width: 800px){
-    .show__grid {
+@media (max-width: 800px) {
+    .col__grid {
         padding-top: var(--size-xl);
     }
 }
 
-.show__grid img {
+.col__grid img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.show__images_1 {
+.col__images {
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: subgrid;
+}
+
+.col__video {
     grid-column: 1/3;
 }
 
-.show__text_1 {
+.col_image_S {
+    grid-column: span 1;
+}
+
+.col_image_L {
+    grid-column: 1/3;
+}
+
+.col__text {
     grid-column: span 1;
 }
 
 @media (max-width: 1024px) {
-    .show__text_1 {
+    .col__text {
         grid-column: 1/3;
-        display: grid;
+        /* display: grid;
         grid-template-columns: subgrid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); */
     }
+}
+
+.page_title_box {
+    grid-column: 1/-1;
+    width: 100%;
+    height: auto;
+    border-bottom: solid 0.15rem var(--clr-dark);
+}
+
+.page_title_text {
+    font-size: var(--size-xl);
+    text-decoration: none;
+    /* font-weight: var(--font-regular); */
+    font-style: oblique;
+    color: var(--clr-dark);
+    letter-spacing: -0.05em;
 }
 
 /* -------------- 4.process -------------- */
@@ -230,6 +320,7 @@ main {
     align-content: start;
     justify-content: start;
 }
+
 /* L */
 @media (max-width: 1024px) {
     .process__grid {
@@ -243,11 +334,11 @@ main {
     object-fit: cover;
 }
 
-.process__imageS_left{
+.process__imageS_left {
     grid-column: 2/3;
 }
 
-.process__imageS_right{
+.process__imageS_right {
     grid-column: span 1;
 }
 
@@ -267,7 +358,8 @@ main {
         grid-template-columns: subgrid;
         grid-template-columns: repeat(2, 1fr);
     }
-    .process__imageS_left{
+
+    .process__imageS_left {
         grid-column: span 1;
     }
 }
