@@ -1,3 +1,4 @@
+// Animation of Navigation Bar
 const container = document.querySelector('.single_page');
 const titleBox = document.querySelector('.title');
 
@@ -19,3 +20,26 @@ container.addEventListener('scroll', () => {
         subheader.classList.add('appear');
     }
 });
+
+//Scroll Control between single and multi pages
+document.addEventListener('DOMContentLoaded', () => {
+    const singlePage = document.querySelector('.single_page');
+    const multiPage = document.querySelector('.multi_page');
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.target === multiPage && entry.isIntersecting) {
+                    singlePage.classList.add('no-scroll');
+                } else if (entry.target === multiPage && !entry.isIntersecting) {
+                    singlePage.classList.remove('no-scroll');
+                }
+            });
+        },
+        { threshold: 0.01 } // Adjust threshold based on when you want to trigger
+    );
+
+    observer.observe(multiPage);
+});
+
+

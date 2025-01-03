@@ -5,10 +5,10 @@ class projectHeader extends HTMLElement{
             <nav>
                 <ul class="header__menu">
                     <li>
-                        <a class="header__link" href="#shelf">←back to lab</a>
+                        <a class="header__link" href="../info/lab.html">←back to lab</a>
                     </li>
                     <li>
-                        <a class="header__link" href="#index">index</a>
+                        <a class="header__link" href="../index.html">index</a>
                     </li>
                     <li>
                         <a class="header__link" href="#about">about</a>

@@ -10,7 +10,7 @@
 /* S */
 /* @media (max-width: 480px){} */
 
-:root{
+:root {
     --screen-phone: 480px;
     --screen-pad: 1024px;
     --screen-hires: 1537px;
@@ -26,17 +26,29 @@ p {
     letter-spacing: 0em;
 }
 
-h1{
+h1 {
     font-size: 1.75rem;
     font-weight: 400;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.03em;
 }
 
-h2{
+h2 {
     font-size: 1.35rem;
     font-weight: 400;
     letter-spacing: 0em;
     line-height: 1.5rem;
+}
+
+.text_light {
+    color: var(--clr-light);
+}
+
+.text_oblique{
+    font-style: oblique;
+}
+
+.text_bold{
+    font-weight: 500;
 }
 
 /* title text */
