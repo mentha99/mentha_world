@@ -21,14 +21,17 @@ main {
 .multi_page {
     width: 100%;
     height: auto;
-    background-color: var(--clr-grey);
     overflow-y: scroll;
     scroll-snap-type: y proximity;
-    padding-top: var(--size-3xl);
     padding-bottom: var(--size-4xl);
 
     /* transform: translateY(-100vh); */
     /* margin-top: -100vh; */
+}
+
+.bg_grey{
+    background-color: var(--clr-grey);
+    padding-top: var(--size-3xl);
 }
 
 /* M */
@@ -188,6 +191,7 @@ main {
     height: 100%;
     object-fit: cover;
 }
+
 
 .basic__images_L {
     grid-column: span 2;
@@ -407,4 +411,13 @@ main {
     .process__imageS_left {
         grid-column: span 1;
     }
+}
+
+
+/* -------------- for previous project -------------- */
+.previous_image{
+    width:100%;
+    height:auto;
+    padding-top: var(--size-s);
+    /* padding-bottom: var(--size-s); */
 }

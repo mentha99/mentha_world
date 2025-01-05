@@ -3,7 +3,7 @@ const container = document.querySelector('.single_page');
 const titleBox = document.querySelector('.title');
 
 container.addEventListener('scroll', () => {
-    console.log('Scrolling...');
+    // console.log('Scrolling...');
     const header = document.querySelector('.header');
     const subheader = document.querySelector('.subheader');
     const viewportHeight = window.innerHeight;

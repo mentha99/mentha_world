@@ -11,7 +11,7 @@ class projectHeader extends HTMLElement{
                         <a class="header__link" href="../index.html">index</a>
                     </li>
                     <li>
-                        <a class="header__link" href="#about">about</a>
+                        <a class="header__link" href="../info/about.html">about</a>
                     </li>
                 </ul>
             </nav>

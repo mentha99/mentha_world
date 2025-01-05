@@ -3,6 +3,14 @@
     --clr-dark: #05231a;
     --clr-grey: #cad2cf;
     --clr-light: #fff;
+    --clr-highlight: #cad2cf;
+
+    --clr-pink: #ff2b63;
+    --clr-orange: #ff6918;
+    --clr-green: #00ffae;
+    --clr-cyan: #00e1ff;
+
+
     --clr-red: #ff0863;
     --clr-placeholder: #e3e3e3;
     --clr-frame: #ff3300;
@@ -20,6 +28,7 @@
 
 
     /* font weight */
+    --font-ultralight: 200;
     --font-light: 300;
     --font-regular: 400;
     --font-bold: 600;
