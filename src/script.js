@@ -1,4 +1,4 @@
-// Animation of Navigation Bar
+// Animation of Header Navigation Bar
 const container = document.querySelector('.single_page');
 const titleBox = document.querySelector('.title');
 

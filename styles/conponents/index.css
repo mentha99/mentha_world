@@ -82,14 +82,17 @@
     color: var(--clr-light);
     background: linear-gradient(0deg, #ffffff00 14%, var(--clr-pink) 14%, var(--clr-pink) 86%, #ffffff00 86%);
 }
+
 .index__thoughts span.orange {
     color: var(--clr-light);
     background: linear-gradient(0deg, #ffffff00 14%, var(--clr-orange) 14%, var(--clr-orange) 86%, #ffffff00 86%);
 }
+
 .index__thoughts span.green {
     color: var(--clr-light);
     background: linear-gradient(0deg, #ffffff00 14%, var(--clr-green) 14%, var(--clr-green) 86%, #ffffff00 86%);
 }
+
 .index__thoughts span.cyan {
     color: var(--clr-light);
     background: linear-gradient(0deg, #ffffff00 14%, var(--clr-cyan) 14%, var(--clr-cyan) 86%, #ffffff00 86%);
@@ -121,14 +124,15 @@
     grid-column: 2/3;
     grid-row: 1/2;
     list-style: none;
-    padding-right: 4.5rem;
+    padding-right: 5rem;
     /* padding-top: 5rem; */
     /* margin-bottom: var(--size-s); */
     padding: var(--size-s) 0;
 }
 
-.index__work{
-    margin-bottom: var(--size-m);
+.index__work {
+    margin-right: 5rem;
+    margin-bottom: var(--size-xl);
 }
 
 .index__work:hover {
