@@ -1,6 +1,8 @@
 :root {
     /* colors */
     --clr-dark: #05231a;
+    --clr-darkgrey: rgb(135, 146, 143);
+    --clr-darkgrey-70: rgba(135, 146, 143, 0.7);
     --clr-grey: #cad2cf;
     --clr-light: #fff;
     --clr-highlight: #cad2cf;
@@ -15,10 +17,21 @@
     --clr-placeholder: #e3e3e3;
     --clr-frame: #ff3300;
 
+    /* process color aka VScode Color */
+    --clr-vsdark:#1f1f1f;;
+    --clr-vslight: #cccccc;
+    --clr-vsgreen: #74985d;
+    --clr-vsyellow: #f9d849;
+    --clr-vsorange: #c5947c;
+    --clr-vscyan: #aadafa;
+    --clr-vsblue: #679ad1;
+    --clr-vsgrey: #808080;
+
     /* size */
     --size-xxs: 0.06rem;
     --size-xs: 0.25rem;
     --size-s: 0.6rem;
+    --size-sm: 0.75rem;
     --size-m: 1rem;
     --size-l: 1.2rem;
     --size-xl: 1.5rem;

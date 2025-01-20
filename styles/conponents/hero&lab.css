@@ -1,3 +1,7 @@
+.U_blend_difference {
+    mix-blend-mode: difference;
+}
+
 .image-multiply {
     mix-blend-mode: multiply;
 }
@@ -55,10 +59,11 @@
     grid-row: 1/2;
     grid-column: 1/2;
     display: grid;
-    grid-template-rows: 1.5fr 0.1fr 1fr;
+    grid-template-rows: 1.2fr 65px 1fr;
     grid-template-columns: 1fr;
     position: relative;
     pointer-events: auto;
+    background-color: black;
 }
 
 .hero__background img {
@@ -89,6 +94,168 @@
     grid-column: 1/2;
 }
 
+#hero-me-grid {
+    height: 100%;
+    width: 710px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    color: var(--clr-light);
+
+    display: grid;
+    grid-template-columns: 3.6fr 6.4fr;
+    grid-template-rows: 10px 13px 15px 26px;
+    grid-template-areas:
+        "name field"
+        "name contact"
+        ".  ."
+        "thought thought";
+}
+
+#hero-me-name {
+    position: relative;
+    grid-area: name;
+}
+
+#hero-me-name p {
+    position: absolute;
+    font-size: 31px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#hero-me-field {
+    padding-left: var(--size-s);
+    position: relative;
+    grid-area: field;
+}
+
+#hero-me-field p {
+    position: absolute;
+    top: -13px;
+    font-size: 22px;
+}
+
+#hero-me-contact {
+    padding-left: var(--size-s);
+    grid-area: contact;
+    position: flex;
+}
+
+#hero-me-contact p {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    color: var(--clr-light);
+    font-size: 8.05px;
+    text-decoration: none;
+}
+
+#hero-me-contact p a {
+    color: var(--clr-light);
+    font-size: 8.05px;
+    text-decoration: none;
+}
+
+#hero-me-thought {
+    position: relative;
+    grid-area: thought;
+}
+
+#hero-me-thought p {
+    position: absolute;
+    font-size: 25.25px;
+    top: 50%;
+    /* left: 50%; */
+    transform: translate(0, -50%);
+    /* padding-left: -2px; */
+}
+
+/* change the me information size */
+@media (max-width: 800px) {
+    .hero__background {
+        grid-template-rows: 1fr 0.6fr 1fr;
+    }
+
+    .hero__background img {
+        height: 60%;
+        object-fit: cover;
+    }
+
+    .hero__background_down img {
+        height: 45%;
+        object-fit: cover;
+    }
+
+    #hero-me-grid {
+        height: 32px;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -200%);
+        /* color: var(--clr-light); */
+
+        /* display: grid; */
+        grid-template-columns: 1fr;
+        grid-template-rows: 35px 26px 16px 45px 30px;
+        grid-template-areas:
+            "name"
+            "field"
+            "contact"
+            "."
+            "thought";
+    }
+
+    #hero-me-grid div {
+        position: relative;
+        height: fit-content;
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+    }
+
+    #hero-me-grid div p {
+        /* position: absolute; */
+        width: 100vw;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    #hero-me-name p {
+        font-size: 30px;
+    }
+
+    #hero-me-field p {
+        font-size: 20px;
+    }
+
+    #hero-me-thought p {
+        font-size: 14px;
+    }
+
+    #hero-me-contact {
+        grid-area: contact;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #hero-me-contact p {
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    #hero-me-contact p a {
+        font-size: 12px;
+    }
+
+
+}
+
 .hero__background_down {
     position: relative;
     background-color: black;
@@ -109,16 +276,6 @@
     pointer-events: none;
 }
 
-@media (max-width: 800px) {
-    .hero__background {
-        grid-template-rows: 1fr 0.4fr 1fr;
-    }
-
-    .hero__background img {
-        height: 100%;
-        object-fit: cover;
-    }
-}
 
 .scrollSnap {
     scroll-snap-align: start;
@@ -134,6 +291,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--clr-light);
+    /* overflow-y:auto; */
 }
 
 .hero__text p {
@@ -155,7 +313,7 @@
     }
 
     .hero__text p {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -180,6 +338,7 @@
 
 /* -------------- LAB -------------- */
 
+
 .window_fixed {
     position: fixed;
     top: 0;
@@ -197,7 +356,7 @@
     grid-row: 1/2;
     height: 100vh;
     width: 100vw;
-    background-color: pink;
+    background-color: black;
 }
 
 .lab__shelf {
@@ -205,6 +364,12 @@
     width: 100%;
     position: relative;
     background-color: black;
+    transition: all 0.5s ease-in;
+}
+
+.lab__shelf.blur {
+    /* border: 5px solid rgba(0, 0, 0, 0.1); */
+    filter: blur(20px) opacity(60%) saturate(200%);
 }
 
 
@@ -352,7 +517,7 @@
     width: 26vh;
     height: 16vh;
     opacity: 0;
-    
+
     pointer-events: none;
     transition: all 0.4s ease;
 }
@@ -421,16 +586,32 @@
     display: none;
 }
 
-
+#lab-header {
+    display: none;
+}
 
 #link-lab-info {
-    display: none; 
+    display: none;
+    cursor: pointer;
 }
 
-.lab__header{
-position: fixed;
+.lab__header {
+    position: fixed;
 }
 
-#labHeader{
-    display: none; 
+#labHeader {
+    display: none;
+}
+
+#button-showinfo {
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    transform: translate(2.6vw, 0.5rem);
+    border: 1.2px var(--clr-dark) solid;
+    transition: all 0.25s;
+}
+
+#button-showinfo:hover {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
 }
